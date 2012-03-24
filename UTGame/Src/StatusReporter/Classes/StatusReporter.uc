@@ -3,6 +3,7 @@ class StatusReporter extends Info;
 var WebSocket WS;
 
 var string ServerName;
+var string GameClass;
 var string MapName;
 var string PrevMapName;
 
@@ -60,6 +61,7 @@ function SendUpdate()
     buffer $= "{";
     buffer $= KeyVal("\"MapName\"", JSON MapName);
     buffer $= KeyVal("\"PrevMapName\"", JSON PrevMapName);
+    buffer $= KeyVal("\"GameClass\"", JSON GameClass);
     buffer $= KeyVal("\"MaxPlayers\"", JSON Game.MaxPlayers);
     buffer $= KeyVal("\"NumPlayers\"", JSON Game.NumPlayers);
     buffer $= KeyVal("\"MaxSpectators\"", JSON Game.MaxSpectators);
@@ -166,6 +168,7 @@ function GetTeamInfo(int Index, out string s)
 function InitMutator() {
     PrevMapName = MapName;
     MapName = WorldInfo.GetMapName(true);
+    GameClass = WorldInfo.Game.class.GetPackageName() $ "." $ WorldInfo.Game.class;
 
     LastRun = default.LastRun;
 
