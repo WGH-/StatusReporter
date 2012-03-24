@@ -279,7 +279,9 @@ static final preoperator string JSON(bool b)
 }
 
 static final preoperator string JSON(color c)
-{
+{   
+    // rgba(R, G, B, A)
+    // where R,G,B = [0, 255], and A = [0.0, 1.0]
     return "\"rgba(" $ c.R $ "," $ c.G $ "," $ c.B $ "," $ float(c.A) / 255 $ ")\"";
 }
 
