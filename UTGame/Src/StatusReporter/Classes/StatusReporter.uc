@@ -2,7 +2,8 @@ class StatusReporter extends Info;
 
 var WebSocket WS;
 
-var string ServerName;
+//var string ServerName;
+var string AddressURL;
 var string GameClass;
 var string MapName;
 var string PrevMapName;
@@ -11,7 +12,6 @@ var float ReportInterval;
 var float MinTimeBetweenReports;
 
 var transient float LastRun;
-
 
 const PROTOCOL = "v1.server.status.torlan.ru";
 
@@ -62,6 +62,7 @@ function SendUpdate()
     buffer $= KeyVal("\"MapName\"", JSON MapName);
     buffer $= KeyVal("\"PrevMapName\"", JSON PrevMapName);
     buffer $= KeyVal("\"GameClass\"", JSON GameClass);
+    buffer $= KeyVal("\"AddressURL\"", JSON AddressURL);
     buffer $= KeyVal("\"MaxPlayers\"", JSON Game.MaxPlayers);
     buffer $= KeyVal("\"NumPlayers\"", JSON Game.NumPlayers);
     buffer $= KeyVal("\"MaxSpectators\"", JSON Game.MaxSpectators);
@@ -169,7 +170,7 @@ function InitMutator() {
     PrevMapName = MapName;
     MapName = WorldInfo.GetMapName(true);
     GameClass = WorldInfo.Game.class.GetPackageName() $ "." $ WorldInfo.Game.class;
-
+    AddressURL = WorldInfo.GetAddressURL(); 
     LastRun = default.LastRun;
 
     DelayedUpdate(); 
