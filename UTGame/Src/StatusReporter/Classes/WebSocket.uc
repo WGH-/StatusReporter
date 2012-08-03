@@ -206,7 +206,7 @@ simulated event Opened()
     SendHeader("Connection: Upgrade");
     SendHeader("Upgrade: websocket");
     SendHeader("Sec-WebSocket-Key:" @ WebSocket_Key);
-    SendHeader("Sec-WebSocket-Version: 8");
+    SendHeader("Sec-WebSocket-Version: 13");
     if (Len(Protocol) > 0) {
         SendHeader("Sec-WebSocket-Protocol:" @ Protocol);
     }
