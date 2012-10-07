@@ -395,9 +395,8 @@ simulated final function ProcessStatusLine(string s) {
 
     s = Mid(s, idx + 1);
 
-    StatusCode = int(Left(s, 3)); // they're really 3DIGIT according to HTTP RFC
-    
-    StatusReason = Mid(s, 4); // 3DIGITS " "
+    StatusCode = int(Left(s, 3)); 
+    StatusReason = Mid(s, 4); 
 }
 
 simulated function string ValidateResponse()
@@ -407,7 +406,7 @@ simulated function string ValidateResponse()
         return "Status code is" @ StatusCode;
     }
     if (!bReceivedUpgradeH) {
-        return "There is no Upgrade header or it doesn't equals to websocket";
+        return "There is no Upgrade header or it doesn't equal to websocket";
     }
     if (!bReceivedConnectionH) {
         return "There is no Connection header or it doesn't equals to Upgrade";
@@ -744,7 +743,7 @@ static final function Pack_UInt64(out array<byte> b, int i, int number)
 }
 
 static final function int Unpack_UInt64(const out array<byte> b, int i)
-{
+{   
     if (b[i+3] != 0 || b[i+2] != 0 || b[i+1] != 0 || b[i] != 0) {
         return -1; // can't handle it
     }
@@ -771,7 +770,8 @@ static final function WebSocket_Mask(out array<byte> b, byte mask[4], int from, 
 {
     local int i;
     for (i = from; i < to; i++) {
-        b[i] = b[i] ^ mask[(i - from) % 4];
+        // '& 0x3' is equivalent to '% 4'
+        b[i] = b[i] ^ mask[(i - from) & 0x3];
     }
 }
 
