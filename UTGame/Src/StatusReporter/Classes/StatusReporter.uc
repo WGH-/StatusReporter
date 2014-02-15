@@ -200,6 +200,14 @@ function NotifyLogout(Controller C) {
     DelayedUpdate(); 
 }
 
+function NotifyBecomeSpectator(PlayerController PC) {
+    DelayedUpdate();
+}
+
+function NotifyBecomeActivePlayer(PlayerController PC) {
+    DelayedUpdate();
+}
+
 event Tick(float DeltaTime)
 {
     SendUpdate();

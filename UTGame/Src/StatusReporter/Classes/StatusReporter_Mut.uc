@@ -79,3 +79,19 @@ function NotifyLogout(Controller Exiting) {
         StatusReporter.NotifyLogout(Exiting);
     }
 }
+
+function NotifyBecomeActivePlayer(PlayerController PC) {
+    super.NotifyBecomeActivePlayer(PC);
+
+    if (StatusReporter != None) {
+        StatusReporter.NotifyBecomeActivePlayer(PC);
+    }
+}
+
+function NotifyBecomeSpectator(PlayerController PC) {
+    super.NotifyBecomeSpectator(PC);
+
+    if (StatusReporter != None) {
+        StatusReporter.NotifyBecomeSpectator(PC);
+    }
+}
