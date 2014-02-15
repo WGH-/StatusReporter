@@ -306,6 +306,7 @@ static final preoperator string JSON(PlayerReplicationInfo PRI)
     }
     s $= KeyVal("\"bBot\"", JSON PRI.bBot);
     s $= KeyVal("\"bIsSpectator\"", JSON PRI.bIsSpectator);
+    s $= KeyVal("\"bOnlySpectator\"", JSON PRI.bOnlySpectator);
     s $= KeyVal("\"UniqueId\"", JSON PRI.UniqueId);
     s $= KeyVal("\"Ping\"", JSON (int(PRI.Ping) * 4), true);
 
