@@ -333,5 +333,5 @@ defaultproperties
     MinTimeBetweenReports=1.0
     LastRun=-1.0
 
-    TickGroup=TG_PostAsyncWork
+    TickGroup=TG_DuringAsyncWork
 }
