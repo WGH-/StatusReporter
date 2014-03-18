@@ -1,3 +1,10 @@
+/*
+   StatusReporter
+   Copyright (C) 2012 Maxim "WGH"
+   
+   This program is free software; you can redistribute and/or modify 
+   it under the terms of the Open Unreal Mod License version 1.1.
+*/
 class StatusReporter_MutSettings extends Settings;
 
 function SetSpecialValue(name PropertyName, string NewValue)

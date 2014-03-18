@@ -1,3 +1,12 @@
+/*
+   StatusReporter
+   Copyright (C) 2003-2004 Michiel "El Muerte" Hendriks
+   Copyright (C) 2012 Maxim "WGH"
+   
+   This program is free software; you can redistribute and/or modify 
+   it under the terms of the Open Unreal Mod License version 1.1.
+*/
+
 class Base64 extends Object;
 
 var protected string LookupTable[64];

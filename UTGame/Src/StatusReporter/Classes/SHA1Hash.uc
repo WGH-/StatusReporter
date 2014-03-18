@@ -1,3 +1,11 @@
+/*
+   StatusReporter
+   Copyright (C) Wormbo 
+   Copyright (C) 2012 Maxim "WGH"
+   
+   This program is free software; you can redistribute and/or modify 
+   it under the terms of the Open Unreal Mod License version 1.1.
+*/
 /******************************************************************************
 SHA1 hash implementation for UnrealScript by Wormbo.
 Feel free to modify and optimize for your needs.
